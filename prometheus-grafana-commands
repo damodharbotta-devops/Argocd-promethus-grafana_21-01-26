@@ -36,4 +36,8 @@ kubectl get svc -n grafana
 
 Copy the EXTERNAL-IP and paste in browser
 
+add the below url in Connection and save and test
+http://prometheus-server.prometheus.svc.cluster.local/
+
+
 
