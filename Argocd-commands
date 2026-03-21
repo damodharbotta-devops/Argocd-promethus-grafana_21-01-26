@@ -1,0 +1,18 @@
+kubectl create namespace argocd    ---> creating namespace
+kubectl apply -n argocd --server-side --force-conflicts -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+
+
+kubectl get -all -n argocd    ----> see all services installed on argocd namespace
+
+kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'     ----> changes service clusterIp to Loadbalancer
+
+
+### install arcocd CLI :
+
+curl -sSL -o argocd-linux-amd64 https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
+rm argocd-linux-amd64
+
+
+argocd admin initial-password -n argocd    ----> get the password
