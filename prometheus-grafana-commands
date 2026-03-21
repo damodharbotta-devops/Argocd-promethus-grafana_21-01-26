@@ -40,4 +40,9 @@ add the below url in Connection and save and test
 http://prometheus-server.prometheus.svc.cluster.local/
 
 
+Port numbers:
+1860
+6417
+315
+
 
